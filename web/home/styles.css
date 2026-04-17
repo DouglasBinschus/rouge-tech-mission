@@ -1,0 +1,266 @@
+:root {
+  --bg: #0b1220;
+  --panel: rgba(17, 26, 46, 0.88);
+  --text: #e7ecff;
+  --muted: #b8c2ff;
+  --accent: #6aa6ff;
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+/* =====================
+   GLOBAL RESET
+===================== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* =====================
+   LAYOUT
+===================== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* =====================
+   HEADER
+===================== */
+.site-header {
+  background: rgba(11, 18, 32, 0.92);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* =====================
+   NAVIGATION
+===================== */
+.nav a {
+  margin-left: 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.nav a:hover {
+  background: rgba(106, 166, 255, 0.12);
+  color: var(--accent);
+}
+
+/* =====================
+   OWNER SECTION (IMAGE)
+===================== */
+.owner {
+  position: relative;
+  max-width: 1100px;
+  margin: 28px auto 40px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+}
+
+.owner img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: saturate(1.05) contrast(1.05);
+}
+
+.owner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 18, 32, 0.82),
+    rgba(11, 18, 32, 0.45)
+  );
+  display: flex;
+  align-items: flex-start;
+}
+
+.owner-content {
+  padding: 32px 36px;
+  max-width: 720px;
+}
+
+.owner-content h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.owner-subtext {
+  margin: 10px 0 18px;
+  line-height: 1.5;
+  color: rgba(231, 236, 255, 0.85);
+}
+
+/* =====================
+   BUTTON
+===================== */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #08101f;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+/* =====================
+   SECTION TRANSITIONS
+===================== */
+.section-divider {
+  height: 1px;
+  margin: 48px auto;
+  max-width: 800px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.18),
+    transparent
+  );
+}
+
+.section-divider.wide {
+  margin: 64px auto;
+}
+
+.section-context {
+  margin: 32px 0 12px;
+  text-align: center;
+}
+
+.section-context h4 {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =====================
+   CARDS
+===================== */
+.card {
+  background: var(--panel);
+  margin: 18px 0;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.signature {
+  margin-top: 14px;
+  font-style: italic;
+  color: rgba(231, 236, 255, 0.78);
+}
+
+/* =====================
+   LIST / ROADMAP
+===================== */
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 8px 0;
+}
+
+/* =====================
+   FOOTER
+===================== */
+.footer {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  background: rgba(11, 18, 32, 0.85);
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 0.9rem;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 860px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .owner img {
+    height: 320px;
+  }
+
+  .owner-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-divider,
+  .section-divider.wide {
+    margin: 40px auto;
+  }
+}
